@@ -1,0 +1,19 @@
+<html t:type="layout" title="G&eacute;rer le site"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter">
+
+<div class="container">
+	<h1>Gestion des utilisateurs</h1>
+	<div class="btn-group btn-group-lg d-flex" role="group">
+		<t:pagelink page="ManageUser" context="0" class="btn btn-primary">Ajouter un utilisateur</t:pagelink>
+	</div>
+	<t:grid source="users" row="user" add="Action"
+		exclude="id,admin,hash,salt"
+		class="table table-hover table-bordered table-primary table-striped">
+		<p:actionCell>
+			<t:pagelink page="ManageUser" context="user.id"
+				class="btn btn-warning btl-lg btn-block">Modifier le mot de passe</t:pagelink>
+		</p:actionCell>
+	</t:grid>
+</div>
+</html>

@@ -1,0 +1,13 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter">
+
+<t:form t:id="form">
+	<td><t:textfield t:id="Aliment" value="aliment"
+			placeHolder="Nouvel aliment" maxlength="30" aria-label="NewAliment"
+			class="text-dark" /></td>
+	<td><t:submit
+			class="btn btn-success btn-justified btn-lg btn-block "
+			value="Ajouter un Aliment" /></td>
+</t:form>
+
+</html>

@@ -1,0 +1,29 @@
+<html t:type="layout" title="G&eacute;rer les aliments"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter">
+
+<div class="container">
+	<h1>Gestion des aliments</h1>
+	<div class="table-responsive-sm">
+		<table
+			class="table table-hover table-bordered table-primary table-striped">
+			<thead>
+				<tr>
+					<th>Aliment</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<t:InlineAddForm placeHolder="literal:Nouvel aliment" value="literal:Ajouter un Aliment" />
+				</tr>
+				<t:loop source="aliments" value="aliment">
+					<tr>
+						<t:EditAlimentForm aliment="aliment" aliments="aliments"></t:EditAlimentForm>
+					</tr>
+				</t:loop>
+			</tbody>
+		</table>
+	</div>
+</div>
+</html>

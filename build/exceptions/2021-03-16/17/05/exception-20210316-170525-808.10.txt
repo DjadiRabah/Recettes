@@ -1,0 +1,196 @@
+EXCEPTION STACK:
+
+
+  Exception: org.apache.tapestry5.ioc.internal.OperationException
+    Message: Failure writing parameter 'value' of component ManageRecipe:editinstructionform.hidden: Property 'instruction' (within property expression 'instruction.id', of djadi.rabah.recipes.components.EditInstructionForm@6ad994a5) is null.
+   location: classpath:djadi/rabah/recipes/components/EditInstructionForm.tml, line 4
+      trace: Handling traditional 'action' component event request for ManageRecipe:editinstructionform.form.
+             Triggering event 'action' on ManageRecipe:editinstructionform.form
+
+  Exception: org.apache.tapestry5.runtime.ComponentEventException
+    Message: Failure writing parameter 'value' of component ManageRecipe:editinstructionform.hidden: Property 'instruction' (within property expression 'instruction.id', of djadi.rabah.recipes.components.EditInstructionForm@6ad994a5) is null.
+    context: org.apache.tapestry5.internal.EmptyEventContext@360aab69
+  eventType: action
+   location: classpath:djadi/rabah/recipes/components/EditInstructionForm.tml, line 4
+
+  Exception: org.apache.tapestry5.ioc.internal.util.TapestryException
+    Message: Failure writing parameter 'value' of component ManageRecipe:editinstructionform.hidden: Property 'instruction' (within property expression 'instruction.id', of djadi.rabah.recipes.components.EditInstructionForm@6ad994a5) is null.
+   location: classpath:djadi/rabah/recipes/components/EditInstructionForm.tml, line 6
+
+  Exception: java.lang.NullPointerException
+    Message: Property 'instruction' (within property expression 'instruction.id', of djadi.rabah.recipes.components.EditInstructionForm@6ad994a5) is null.
+
+  Stack trace:
+
+  - org.apache.tapestry5.internal.services.PropertyConduitSourceImpl.nullTerm(PropertyConduitSourceImpl.java:1546)
+  - $InternalPropertyConduit_fd96a159071.navigate(Unknown Source)
+  - $InternalPropertyConduit_fd96a159071.set(Unknown Source)
+  - org.apache.tapestry5.internal.bindings.PropBinding.set(PropBinding.java:76)
+  - org.apache.tapestry5.internal.transform.ParameterWorker$3$1.writeToBinding(ParameterWorker.java:298)
+  - org.apache.tapestry5.internal.transform.ParameterWorker$3$1.set(ParameterWorker.java:245)
+  - org.apache.tapestry5.corelib.components.Hidden.conduit_set_value(Hidden.java)
+  - org.apache.tapestry5.corelib.components.Hidden.processSubmission(Hidden.java:142)
+  - org.apache.tapestry5.corelib.components.Hidden.access$000(Hidden.java:41)
+  - org.apache.tapestry5.corelib.components.Hidden$ProcessSubmission.execute(Hidden.java:104)
+  - org.apache.tapestry5.corelib.components.Hidden$ProcessSubmission.execute(Hidden.java:93)
+  - org.apache.tapestry5.corelib.components.Form.executeStoredActions(Form.java:737)
+  - org.apache.tapestry5.corelib.components.Form.onAction(Form.java:515)
+  - org.apache.tapestry5.corelib.components.Form.dispatchComponentEvent(Form.java)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.dispatchEvent(ComponentPageElementImpl.java:917)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.processEventTriggering(ComponentPageElementImpl.java:1102)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.access$3100(ComponentPageElementImpl.java:57)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl$5.invoke(ComponentPageElementImpl.java:1047)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl$5.invoke(ComponentPageElementImpl.java:1044)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.invoke(OperationTrackerImpl.java:82)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.invoke(PerThreadOperationTracker.java:72)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.invoke(RegistryImpl.java:1260)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementResourcesImpl.invoke(ComponentPageElementResourcesImpl.java:154)
+  - org.apache.tapestry5.internal.structure.ComponentPageElementImpl.triggerContextEvent(ComponentPageElementImpl.java:1043)
+  - org.apache.tapestry5.internal.services.ComponentEventRequestHandlerImpl.handle(ComponentEventRequestHandlerImpl.java:73)
+  - org.apache.tapestry5.internal.services.AjaxFilter.handle(AjaxFilter.java:42)
+  - $ComponentEventRequestHandler_fd96a158bcf.handle(Unknown Source)
+  - org.apache.tapestry5.upload.internal.services.UploadExceptionFilter.handle(UploadExceptionFilter.java:76)
+  - $ComponentEventRequestHandler_fd96a158bcf.handle(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$37.handle(TapestryModule.java:2225)
+  - $ComponentEventRequestHandler_fd96a158bcf.handle(Unknown Source)
+  - $ComponentEventRequestHandler_fd96a158b23.handle(Unknown Source)
+  - org.apache.tapestry5.internal.services.ComponentRequestHandlerTerminator.handleComponentEvent(ComponentRequestHandlerTerminator.java:43)
+  - org.apache.tapestry5.internal.services.DeferredResponseRenderer.handleComponentEvent(DeferredResponseRenderer.java:45)
+  - $ComponentRequestHandler_fd96a158b25.handleComponentEvent(Unknown Source)
+  - org.apache.tapestry5.services.InitializeActivePageName.handleComponentEvent(InitializeActivePageName.java:39)
+  - $ComponentRequestHandler_fd96a158b25.handleComponentEvent(Unknown Source)
+  - org.apache.tapestry5.internal.services.RequestOperationTracker$1.perform(RequestOperationTracker.java:55)
+  - org.apache.tapestry5.internal.services.RequestOperationTracker$1.perform(RequestOperationTracker.java:52)
+  - org.apache.tapestry5.ioc.internal.OperationTrackerImpl.perform(OperationTrackerImpl.java:110)
+  - org.apache.tapestry5.ioc.internal.PerThreadOperationTracker.perform(PerThreadOperationTracker.java:84)
+  - org.apache.tapestry5.ioc.internal.RegistryImpl.perform(RegistryImpl.java:1266)
+  - org.apache.tapestry5.internal.services.RequestOperationTracker.handleComponentEvent(RequestOperationTracker.java:47)
+  - $ComponentRequestHandler_fd96a158b25.handleComponentEvent(Unknown Source)
+  - $ComponentRequestHandler_fd96a158add.handleComponentEvent(Unknown Source)
+  - org.apache.tapestry5.internal.services.ComponentEventDispatcher.dispatch(ComponentEventDispatcher.java:48)
+  - $Dispatcher_fd96a158adf.dispatch(Unknown Source)
+  - $Dispatcher_fd96a158ad3.dispatch(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$RequestHandlerTerminator.service(TapestryModule.java:305)
+  - org.apache.tapestry5.internal.services.RequestErrorFilter.service(RequestErrorFilter.java:26)
+  - $RequestHandler_fd96a158ad4.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$3.service(TapestryModule.java:848)
+  - $RequestHandler_fd96a158ad4.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$2.service(TapestryModule.java:838)
+  - $RequestHandler_fd96a158ad4.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.StaticFilesFilter.service(StaticFilesFilter.java:89)
+  - $RequestHandler_fd96a158ad4.service(Unknown Source)
+  - djadi.rabah.recipes.services.AppModule$1.service(AppModule.java:118)
+  - $RequestFilter_fd96a158ace.service(Unknown Source)
+  - $RequestHandler_fd96a158ad4.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.CheckForUpdatesFilter$2.invoke(CheckForUpdatesFilter.java:105)
+  - org.apache.tapestry5.internal.services.CheckForUpdatesFilter$2.invoke(CheckForUpdatesFilter.java:95)
+  - org.apache.tapestry5.ioc.internal.util.ConcurrentBarrier.withRead(ConcurrentBarrier.java:83)
+  - org.apache.tapestry5.internal.services.CheckForUpdatesFilter.service(CheckForUpdatesFilter.java:119)
+  - $RequestHandler_fd96a158ad4.service(Unknown Source)
+  - $RequestHandler_fd96a158ac8.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$HttpServletRequestHandlerTerminator.service(TapestryModule.java:256)
+  - org.apache.tapestry5.upload.internal.services.MultipartServletRequestFilter.service(MultipartServletRequestFilter.java:45)
+  - $HttpServletRequestHandler_fd96a158aca.service(Unknown Source)
+  - org.apache.tapestry5.internal.gzip.GZipFilter.service(GZipFilter.java:59)
+  - $HttpServletRequestHandler_fd96a158aca.service(Unknown Source)
+  - org.apache.tapestry5.internal.services.IgnoredPathsFilter.service(IgnoredPathsFilter.java:69)
+  - $HttpServletRequestFilter_fd96a158ac4.service(Unknown Source)
+  - $HttpServletRequestHandler_fd96a158aca.service(Unknown Source)
+  - org.apache.tapestry5.modules.TapestryModule$1.service(TapestryModule.java:798)
+  - $HttpServletRequestHandler_fd96a158aca.service(Unknown Source)
+  - $HttpServletRequestHandler_fd96a158ac3.service(Unknown Source)
+  - org.apache.tapestry5.TapestryFilter.doFilter(TapestryFilter.java:166)
+  - org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+  - org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+  - org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:200)
+  - org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+  - org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+  - org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+  - org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+  - org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+  - org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+  - org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+  - org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+  - org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:834)
+  - org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1415)
+  - org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+  - java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+  - java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+  - org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+  - java.lang.Thread.run(Unknown Source)
+
+REQUEST:
+
+Basic Information:
+
+                contextPath: 
+                      flags: requestedSessionIdValid
+                     method: POST
+                       path: /managerecipe.editinstructionform.form
+                     locale: fr
+                 serverName: localhost
+                 remoteHost: 127.0.0.1
+
+Headers:
+
+                     accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+            accept-encoding: gzip, deflate
+            accept-language: fr,fr-FR;q=0.8,en-US;q=0.5,en;q=0.3
+                 connection: keep-alive
+             content-length: 621
+               content-type: application/x-www-form-urlencoded
+                     cookie: JSESSIONID=E437C02BE30FD8ED2BF3EC0F9A8E0984
+                       host: localhost:8080
+                     origin: http://localhost:8080
+                    referer: http://localhost:8080/managerecipe/4
+  upgrade-insecure-requests: 1
+                 user-agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:86.0) Gecko/20100101 Firefox/86.0
+
+Parameters:
+                     hidden: 1
+                   hidden_0: 1
+                   hidden_1: 4
+                instruction: Mélan
+                   submit_0: Modifier l'instruction
+                       t:ac: 4
+                 t:formdata: phdPSSgNzf6rvFXKrbiqI9hKB4k=:H4sIAAAAAAAAAFvzloG1XItB3TcxLzE9NSg1ObMg1So1JbMkM6+4pKg0uSQzPy8tvyhXLyMzJSU1j6G4iMEhvyhdL7EgMTkjVa8ksSAVqK7SVC85vyg1JzMJSOcW5Oel5pUU63mAtagEFOUnpxYXB5cm5WYWFwPNi2pXEK6Q3sHGxMDow8CdnJ9XUpSf45eYm1rCIOSTlViWqJ+TmJeuH1xSlJmXbl1RUMLABrG9XIdBk0iHxhswFBcy1DEwlDBwwERI0W6Iod2wXJ9Bh6B2JD4orEzxhlVSYnGqnmMSUDAxucQtMzUnRSU4taS0QDX0MPdD0eN/MAII5CRGUIBwI9lDjrscSXUXRiQeXpdikvZt3jkmBoaKAqJSUDFIbwlJKQhsXQmm5TODP0lu3dLizMTA5MPAkZyTCVTtmQIOHWCApeak5gIFUAKME2J7vKElMEahbAMAMkj+BP0CAAA=
+
+SESSION:
+
+                                     authToken: djadi.rabah.recipes.pojo.User@3fe44bcb
+                                 settingsToken: djadi.rabah.recipes.pojo.Settings@758ad7f4
+  sso:org.apache.tapestry5.alerts.AlertStorage: org.apache.tapestry5.alerts.AlertStorage@f87080f
+     state:Recipes:grid:defaultPaginationModel: GridPaginationModelImpl[currentPage=null, sortColumnId=null, sortAscending=null]
+
+SYSTEM INFORMATION:
+
+Memory:
+      445 677 632 bytes free
+      973 602 816 bytes total
+    7 624 720 384 bytes max
+
+24 Threads:
+                   Reference Handler WAITING, daemon, priority 10
+                           Finalizer WAITING, daemon, priority 8
+                   Signal Dispatcher RUNNABLE, daemon, priority 9
+                     Attach Listener RUNNABLE, daemon
+           Tapestry PeriodicExecutor TIMED_WAITING
+                  Catalina-utility-1 TIMED_WAITING, priority 1
+                  Catalina-utility-2 WAITING, priority 1
+                         container-0 TIMED_WAITING
+   NioBlockingSelector.BlockPoller-1 RUNNABLE, daemon
+                http-nio-8080-exec-1 WAITING, daemon
+                http-nio-8080-exec-2 WAITING, daemon
+*               http-nio-8080-exec-3 RUNNABLE, daemon
+                http-nio-8080-exec-4 WAITING, daemon
+                http-nio-8080-exec-5 WAITING, daemon
+                http-nio-8080-exec-6 WAITING, daemon
+                http-nio-8080-exec-7 WAITING, daemon
+                http-nio-8080-exec-8 WAITING, daemon
+                http-nio-8080-exec-9 WAITING, daemon
+               http-nio-8080-exec-10 WAITING, daemon
+        http-nio-8080-ClientPoller-0 RUNNABLE, daemon
+        http-nio-8080-ClientPoller-1 RUNNABLE, daemon
+            http-nio-8080-Acceptor-0 RUNNABLE, daemon
+                       DestroyJavaVM RUNNABLE
+  MySQL Statement Cancellation Timer WAITING, daemon

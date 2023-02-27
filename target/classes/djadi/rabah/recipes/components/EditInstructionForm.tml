@@ -1,0 +1,22 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter">
+
+<t:form t:id="form">
+
+	<t:hidden value="instruction.id" />
+	<t:hidden value="instruction.rank" />
+	<t:hidden value="instruction.idRecipe" />
+
+	<td><t:textarea t:id="instruction"
+			value="instruction.instruction" maxLength="200" /></td>
+
+	<td><div class="btn-group btn-group-lg d-flex">
+			<t:submit class="btn btn-warning btn-lg"
+				value="Modifier l'instruction" />
+			<t:eventlink t:event="deleteInstruction"
+				class="btn btn-danger btn-lg" t:mixins="Confirm"
+				Confirm.message="Voulez-vous vraiment retirer cette instruction ?"
+				context="instruction.id">Retirer l'instruction</t:eventlink>
+		</div></td>
+</t:form>
+</html>

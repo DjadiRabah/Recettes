@@ -1,0 +1,17 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter">
+
+<t:form t:id="editForm">
+	<t:hidden value="measure.id" />
+
+	<td><t:textfield t:id="Mesure" value="measure.measure"
+maxlength="30" aria-label="NewAliment" class="text-dark"/></td>
+	<td><div class="btn-group btn-group-lg d-flex">
+			<t:submit class="btn btn-warning btn-lg" value="Modifier l'aliment" />
+			<t:eventlink t:event="deleteMeasure" class="btn btn-danger btn-lg"
+				t:mixins="Confirm"
+				Confirm.message="Voulez-vous vraiment retirer la mesure ${measure.measure}?"
+				context="measure.id">Retirer la mesure</t:eventlink>
+		</div></td>
+</t:form>
+</html>

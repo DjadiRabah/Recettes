@@ -1,0 +1,41 @@
+<html t:type="layout" title="Consulter ses recettes"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter">
+
+<div class="container">
+	<nav aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item">Recettes</li>
+		</ol>
+	</nav>
+</div>
+
+<div class="container">
+	<t:pagelink page="ManageRecipe" context="0"
+		class="btn btn-primary btn-lg btn-block">Ajouter une recette</t:pagelink>
+</div>
+
+<div class="container">
+	<div class="table-responsive-sm">
+		<h1>Liste de recettes</h1>
+		<t:if test="!recipes.empty">
+			<t:grid source="recipes" row="recipe" add="Action"
+				exclude="id, idUser,image" class="table table-hover table-bordered table-primary table-striped">
+				<p:actionCell>
+					<div class="btn-group d-flex" role="group">
+						<t:pageLink page="ManageRecipe" context="recipe.id"
+							class="btn btn-info">Modifier la recette</t:pageLink>
+						<t:eventlink t:event="deleteRecipe" t:context="recipe.id"
+							class="btn btn-danger" t:mixins="Confirm"
+							Confirm.message="Voulez-vous vraiment supprimer la recette ${recipe.name} ?">Supprimer</t:eventlink>
+					</div>
+				</p:actionCell>
+			</t:grid>
+			<p:else>
+				<p class="lead">Vous n'avez pas encore ajout&eacute; de recette.</p>
+			</p:else>
+		</t:if>
+	</div>
+</div>
+
+</html>

@@ -1,0 +1,50 @@
+<html t:type="layout" title="G&eacute;rer un utilisateur"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter">
+
+<div class="container">
+	<nav aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><t:pagelink page="ManageUsers">Gestion des utilisateurs</t:pagelink></li>
+			<t:if test="${isnewUser}">
+				<li class="breadcrumb-item">Nouvel utilisateur</li>
+				<p:else>
+				<li class="breadcrumb-item">${user.login}</li>
+				</p:else>
+			</t:if>
+		</ol>
+	</nav>
+
+	<t:if test="${!IsNewUser}">
+		<div class="btn-group btn-group-lg d-flex" role="group">
+			<t:pagelink page="ManageUser" context="0" class="btn btn-primary">Ajouter un utilisateur</t:pagelink>
+		</div>
+	</t:if>
+
+	<h1>Formulaire</h1>
+	<t:form class="form-horizontal" t:id="form">
+		<div class="form-group">
+			<t:label for="login" class="col-sm-12">Pseudo</t:label>
+			<div class="col-sm-12">
+				<t:textfield t:id="login" maxlength="10"
+					validate="required, regexp=[A-Za-z]+" placeholder="Pseudo"
+					value="user.login" disabled="!IsNewUser" />
+			</div>
+		</div>
+
+		<div class="form-group">
+			<t:label for="password" class="col-sm-12">Mot de passe</t:label>
+			<div class="col-sm-12">
+				<t:passwordfield t:id="password" class="input-block-level"
+					validate="required" placeholder="Mot de passe" value="user.hash" />
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-sm-4 col-sm-offset-2">
+				<t:submit class="btn btn-large btn-primary" value="Envoyer" />
+			</div>
+		</div>
+	</t:form>
+</div>
+</html>

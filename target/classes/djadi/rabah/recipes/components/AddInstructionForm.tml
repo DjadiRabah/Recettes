@@ -1,0 +1,10 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter">
+
+<t:form t:id="form">
+	<td><t:textarea t:id="newInstruction"
+			value="instruction.instruction" maxLength="200" /></td>
+	<td><t:submit class="btn btn-success btn-lg btn-block"
+			value="Ajouter une instruction" /></td>
+</t:form>
+</html>

@@ -1,0 +1,18 @@
+{
+	"name": "Djadi Recipes",
+	"short_name": "Recipes",
+	"description": "Djadi Recipes web application.",
+	"start_url": "/login",
+	"background_color": "#111111",
+	"display": "fullscreen",
+	"orientation": "portrait",
+	"theme_color": "#111111",
+	"icons": [
+		{
+			"src": "icon.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "any maskable"
+		}
+	]
+} 

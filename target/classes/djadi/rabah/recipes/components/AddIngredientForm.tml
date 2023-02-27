@@ -1,0 +1,13 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter">
+
+<t:form t:id="form">
+	<td><t:textfield t:id="newAmount" value="ingredient.amount" type="number"
+			min="0" /></td>
+	<td><t:select model="measureSelectModel" value="ingredient.idMeasure" /></td>
+	<td><t:select model="alimentSelectModel" value="ingredient.idAliment" /></td>
+	<td><t:submit class="btn btn-success btn-lg btn-block"
+			value="Ajouter un ingr&eacute;dient" /></td>
+</t:form>
+
+</html>

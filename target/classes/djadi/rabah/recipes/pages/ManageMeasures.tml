@@ -1,0 +1,29 @@
+<html t:type="layout" title="G&eacute;rer les mesures"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter">
+
+<div class="container">
+	<h1>Gestion des mesures</h1>
+	<div class="table-responsive-sm">
+		<table
+			class="table table-hover table-bordered table-primary table-striped">
+			<thead>
+				<tr>
+					<th scope="col">Mesure</th>
+					<th scope="col">Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+ 					<t:AddMeasureForm /> 
+				</tr>
+				<t:loop source="measures" value="measure">
+					<tr>
+						<t:EditMeasureForm measure="measure" />
+					</tr>
+				</t:loop>
+			</tbody>
+		</table>
+	</div>
+</div>
+</html>

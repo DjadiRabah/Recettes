@@ -1,0 +1,97 @@
+<html t:type="layout" title="G&eacute;rer une recette"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter">
+
+<div class="container">
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item"><t:pagelink page="Recipes">Consulter ses recettes</t:pagelink></li>
+		<t:if test="!isNewRecipe">
+			<li class="breadcrumb-item">${recipe.name}</li>
+			<p:else>
+				<li class="breadcrumb-item">Nouvelle recette</li>
+			</p:else>
+		</t:if>
+	</ol>
+</div>
+<div class="container">
+	<t:if test="${!IsNewRecipe}">
+		<t:pagelink page="ManageRecipe" context="0"
+			class="btn btn-primary btn-lg btn-block">Ajouter une recette</t:pagelink>
+	</t:if>
+</div>
+<div class="container">
+	<h1>${function} une recette</h1>
+
+
+	<h2>Formulaire</h2>
+	<t:beaneditform t:id="beanEditForm" object="recipe"
+		exclude="id, idUser, image" submitLabel="${function}">
+	</t:beaneditform>
+
+
+	<t:if test="${!IsNewRecipe}">
+		<a class="btn btn-info btn-lg btn-block" id="imageUploader">Ajouter
+			une image</a>
+		<t:if test="url">
+			<div class="text-center">
+				<img class="img-fluid" src="${url}" />
+			</div>
+		</t:if>
+
+		<h2>Ingr&eacute;dients</h2>
+
+		<div class="table-responsive-sm">
+			<table
+				class="table table-hover table-bordered table-primary table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Quantit&eacute;</th>
+						<th scope="col">Mesure</th>
+						<th scope="col">Aliment</th>
+						<th scope="col">Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<t:AddIngredientForm idRecipe="recipe.id"></t:AddIngredientForm>
+					</tr>
+					<t:loop source="ingredients" value="ingredient"
+						formstate="ITERATION">
+						<tr>
+							<t:EditIngredientForm idIngredient="ingredient.id"
+								idCreator="recipe.idUser"></t:EditIngredientForm>
+						</tr>
+					</t:loop>
+				</tbody>
+			</table>
+		</div>
+
+		<h2>Instructions</h2>
+		<div class="table-responsive-sm">
+			<table
+				class="table table-hover table-bordered table-primary table-striped">
+				<thead>
+					<tr>
+						<th scope="col">Instruction</th>
+						<th scope="col">Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<t:AddInstructionForm idRecipe="recipe.id"
+							idCreator="recipe.idUser" />
+					</tr>
+					<t:loop source="instructions" value="instruction"
+						formstate="ITERATION">
+						<tr>
+							<t:EditInstructionForm instruction="instruction"
+								idCreator="recipe.idUser"/>
+						</tr>
+					</t:loop>
+				</tbody>
+			</table>
+		</div>
+
+	</t:if>
+</div>
+</html>

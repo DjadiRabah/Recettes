@@ -1,0 +1,20 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter">
+
+<t:form t:id="editForm">
+	<t:hidden value="idIngredient" />
+	<t:hidden value="idRecipe" />
+	<td><t:textfield t:id="amount" value="amount" type="number"
+			min="0" step="0.5" /></td>
+	<td><t:select model="measureSelectModel" value="idMeasure" /></td>
+	<td><t:select model="alimentSelectModel" value="idAliment" /></td>
+	<td><div class="btn-group btn-group-lg d-flex">
+			<t:submit class="btn btn-warning btn-lg"
+				value="Modifier l'ingr&eacute;dient" />
+			<t:eventlink t:event="deleteIngredient" class="btn btn-danger btn-lg"
+				t:mixins="Confirm"
+				Confirm.message="Voulez-vous vraiment retirer cet ingr&eacute;dient ?"
+				context="idIngredient">Retirer l'ingr&eacute;dient</t:eventlink>
+		</div></td>
+</t:form>
+</html>

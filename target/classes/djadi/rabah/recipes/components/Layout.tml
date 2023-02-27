@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter">
+<head>
+<meta charset="utf-8"></meta>
+<title>${title}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description"
+	content="Application web familiale de la famille DJADI" />
+<meta name="theme-color" content="#111111" />
+<meta name="author" content="Rabah DJADI" />
+<link rel="manifest" href="${asset:context:manifest.json}" />
+<link rel="shortcut icon" href="${asset:context:icon.png}" />
+<link rel="apple-touch-icon" href="${asset:context:icon.png}" />
+</head>
+<body>
+	<t:if test="${isConnected}">
+		<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-primary">
+			<t:pagelink page="index" class="navbar-brand text-dark">Les recettes DJADI</t:pagelink>
+			<button class="navbar-toggler" type="button" data-toggle="collapse"
+				data-target="#navbarColor01" aria-controls="navbarColor01"
+				aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarColor01">
+				<ul class="navbar-nav mr-auto">
+					<t:any element="li" class="nav-item">
+						<t:pagelink page="Index" class="nav-link text-dark">Accueil</t:pagelink>
+					</t:any>
+
+					<li class="nav-item dropdown show"><a
+						class="nav-link dropdown-toggle text-dark" data-toggle="dropdown"
+						href="#" role="button" aria-haspopup="true" aria-expanded="true">G&eacute;rer
+							ses recettes</a>
+						<div class="dropdown-menu">
+							<t:pagelink page="ManageRecipe" context="0" class="dropdown-item">Ajouter une recette</t:pagelink>
+							<div class="dropdown-divider"></div>
+							<t:pagelink page="Recipes" class="dropdown-item">Consulter ses recettes</t:pagelink>
+						</div></li>
+
+					<li class="nav-item"><t:pagelink page="ManageTheme"
+							class="nav-link text-dark">Changer de th&egrave;me</t:pagelink></li>
+					<t:if test="${isConnected}">
+						<t:if test="${isAdmin}">
+							<li class="nav-item dropdown show"><a
+								class="nav-link dropdown-toggle text-dark"
+								data-toggle="dropdown" href="#" role="button"
+								aria-haspopup="true" aria-expanded="true">G&eacute;rer le
+									site</a>
+								<div class="dropdown-menu">
+									<t:pagelink page="ManageUsers" class="dropdown-item">G&eacute;rer les utilisateurs</t:pagelink>
+									<div class="dropdown-divider"></div>
+									<t:pagelink page="ManageAliments" class="dropdown-item">G&eacute;rer les aliments</t:pagelink>
+									<div class="dropdown-divider"></div>
+									<t:pagelink page="ManageMeasures" class="dropdown-item">G&eacute;rer les mesures</t:pagelink>
+								</div></li>
+						</t:if>
+					</t:if>
+				</ul>
+				<span class="navbar-text"> <t:if test="${isConnected}">
+						<t:eventlink t:event="disconnect" class="nav-link text-dark">Se déconnecter</t:eventlink>
+					</t:if>
+				</span>
+
+			</div>
+		</nav>
+	</t:if>
+
+	<div class="container-fluid">
+		<t:alerts />
+	</div>
+
+	<div class="container-fluid">
+		<div class="row clear-top">
+			<t:body />
+		</div>
+	</div>
+<!-- 	<t:if test="${isConnected}"> -->
+<!-- 		<div class=" py-4 footer navbar-fixed-bottom"> -->
+<!-- 		<div class="footer"> -->
+<!-- 			<footer class="py-4  bg-dark text-white-50"> -->
+<!-- 				<div class="container text-center lead">${year} Copyright -->
+<!-- 					&copy; Les recettes DJADI</div> -->
+<!-- 			</footer> -->
+<!-- 		</div> -->
+<!-- 	</t:if> -->
+
+</body>
+</html>

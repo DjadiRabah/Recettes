@@ -1,0 +1,9 @@
+<html t:type="layout" title="Choisir un th&egrave;me"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter">
+
+<div class="container">
+	<h1 class="text-dark">Les th&egrave;mes</h1>
+	<div class="text-center" id="themes"></div>
+</div>
+</html>

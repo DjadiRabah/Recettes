@@ -1,0 +1,8 @@
+<html t:type="layout" title="Index"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd">
+
+<div class="container-fluid">
+	<div class="text-center" id="letters"></div>
+	<div class="text-center" id="main"></div>
+</div>
+</html>

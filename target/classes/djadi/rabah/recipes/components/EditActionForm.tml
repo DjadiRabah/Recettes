@@ -1,0 +1,19 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter">
+
+<t:form t:id="form">
+	<t:hidden value="action.id" />
+			
+	<td><t:textfield t:id="Action" value="action.action"
+			maxlength="30" aria-label="Action" class="text-dark" /></td>
+			
+	<td><div class="btn-group btn-group-lg d-flex">
+			<t:submit class="btn btn-warning btn-lg" value="Modifier l'action" />
+			<t:eventlink t:event="deleteAction" class="btn btn-danger btn-lg"
+				t:mixins="Confirm"
+				Confirm.message="Voulez-vous vraiment retirer l'action ${action.action}?"
+				context="action.id">Retirer l'action</t:eventlink>
+		</div></td>
+</t:form>
+
+</html>

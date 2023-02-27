@@ -1,0 +1,5 @@
+<html t:type="layout" title="Error404 Page Not Found | quiz"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter">
+
+</html>

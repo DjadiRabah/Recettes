@@ -1,0 +1,13 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_4.xsd"
+	xmlns:p="tapestry:parameter">
+
+<t:form t:id="form">
+	<td><t:textfield t:id="textField" value="input"
+			placeHolder="${placeHolder}" maxlength="30"
+			aria-label="${placeHolder}" class="text-dark" /></td>
+	<td><t:submit
+			class="btn btn-success btn-justified btn-lg btn-block "
+			value="${value}" /></td>
+</t:form>
+
+</html>
